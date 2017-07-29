@@ -4,9 +4,6 @@
   "description": "GateHub ripple tools",
   "main": "lib/cmd.js",
   "bin": "bin/ripple-tools",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "GateHub <jaka@gatehub.net> (https://www.gatehub.net)",
   "license": "Unlicense",
   "dependencies": {
@@ -16,5 +13,8 @@
     "ripple-lib": "0.17.2",
     "yamljs": "^0.2.8",
     "yargs": "^4.8.1"
+  },
+  "devDependencies": {
+    "np": "^2.16.0"
   }
 }
