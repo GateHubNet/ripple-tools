@@ -1,6 +1,6 @@
 {
   "name": "ripple-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GateHub ripple tools",
   "main": "lib/cmd.js",
   "bin": "bin/ripple-tools",
