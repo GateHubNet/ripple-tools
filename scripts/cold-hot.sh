@@ -2,6 +2,11 @@
 
 set -e
 
+if [ -z $CURRENCY ]; then
+	echo "CURRENCY not set"
+	exit 1
+fi
+
 if [ -z $FUNDING_SEQUENCE ]; then
 	echo "FUNDING_SEQUENCE not set"
 	exit 1
@@ -64,7 +69,7 @@ ripple-tools set-flag disallowIncomingXRP \
 echo "* tx hot -> cold trust line"
 ripple-tools set-trust \
 	--address $HOT_ADDRESS --secret $HOT_SECRET \
-	--counterparty $COLD_ADDRESS --currency USD \
+	--counterparty $COLD_ADDRESS --currency $CURRENCY \
 	--fee 0.000012 --sequence 1 \
 	--format json --offline --export >> transactions.json
 

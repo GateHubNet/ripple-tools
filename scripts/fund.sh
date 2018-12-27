@@ -6,4 +6,4 @@ HOT_WALLET=$(cat hot_wallet.json | jq -r '.address')
 
 ripple-tools send-payment \
 	--address $COLD_WALLET --secret $COLD_SECRET \
-	--to $HOT_WALLET --amount 100000 --currency USD
+	--to $HOT_WALLET --amount 100000 --currency $CURRENCY
