@@ -10,7 +10,7 @@
     "bluebird": "^3.4.1",
     "lodash": "^4.14.1",
     "readline-promise": "0.0.1",
-    "ripple-lib": "0.17.2",
+    "ripple-lib": "0.22.0",
     "yamljs": "^0.2.8",
     "yargs": "^4.8.1"
   },
