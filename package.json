@@ -5,7 +5,10 @@
   "main": "lib/cmd.js",
   "bin": "bin/ripple-tools",
   "author": "GateHub <jaka@gatehub.net> (https://www.gatehub.net)",
-  "license": "Unlicense",
+  "license": "MIT",
+  "scripts": {
+    "release": "np"
+  },
   "dependencies": {
     "bluebird": "^3.4.1",
     "lodash": "^4.14.1",
