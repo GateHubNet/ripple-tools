@@ -67,10 +67,26 @@ ripple-tools set-flag disallowIncomingXRP \
 	--format json --offline --export >> transactions.json
 
 echo "* tx hot -> cold trust line"
-ripple-tools set-trust \
-	--address $HOT_ADDRESS --secret $HOT_SECRET \
-	--counterparty $COLD_ADDRESS --currency $CURRENCY \
-	--fee 0.000012 --sequence 1 \
-	--format json --offline --export >> transactions.json
+
+IFS=',' read -r -a currs <<< $CURRENCY
+curr=""
+SEQ=1
+
+for curr in "${currs[@]}"
+do
+	echo "** [${curr}]: tx hot -> cold trust line -- seq ${SEQ}"
+	ripple-tools set-trust \
+		--address $HOT_ADDRESS --secret $HOT_SECRET \
+		--counterparty $COLD_ADDRESS --currency $curr \
+		--fee 0.000012 --sequence $SEQ \
+		--format json --offline --export >> transactions.json
+	SEQ=$((SEQ + 1))
+done
 
 echo "-> done"
+
+COLD_WALLET_REPO="wallets/cold_wallet_${CURRENCY}.json"
+HOT_WALLET_REPO="wallets/hot_wallet_${CURRENCY}.json"
+
+cp cold_wallet.json $COLD_WALLET_REPO
+cp hot_wallet.json $HOT_WALLET_REPO
