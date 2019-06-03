@@ -1,1 +1,8 @@
 node_modules
+wallets
+currencies.txt
+cold_wallet.json
+hot_wallet.json
+transactions.json
+lib
+.idea

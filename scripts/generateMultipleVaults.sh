@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#FUNDING_SECRET=sngoCUPcwzuB8138LXnvPw8A2Xgrr FUNDING_ADDRESS=rUctHYopu5jwffeKf5ZwBKjKrQAGA4LHfk SERVER="wss://s.altnet.rippletest.net:51233" ./scripts/generateMultipleVaults.sh
+#FUNDING_SECRET=xxx FUNDING_ADDRESS=xxx SERVER="wss://s.altnet.rippletest.net:51233" ./scripts/generateMultipleVaults.sh
 
 set -e
 
