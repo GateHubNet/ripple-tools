@@ -38,8 +38,41 @@ Options:
 ```
 ## Author
 
-Jaka Hudoklin <jaka@gatehub.net>
+GateHub
 
 ## License
 
 MIT
+
+## Example use
+
+#### Install
+
+```bash
+npm i # compiles code
+npm link # links ripple-tools to executables
+```
+
+#### Use
+
+```bash
+npm run car get-info -- param1=value1 param2=value2 # running code with nodejs
+
+
+# offline generate transactions to issue new currency
+FUNDING_SECRET=<funding_secret> FUNDING_ADDRESS=<funding_address> \
+FUNDING_SEQUENCE=<funding_sequence> CURRENCY=<currency_code> \
+DOMAIN=<domain_name> FEE=<currency_fee> \
+FUNDING_AMOUNT=<new_currency_amount> ./scripts/generateVaultOffline.sh
+
+
+# submit generated transactions
+ripple-tools submit-file --export=transactions.json --offline=false
+
+
+# other examples
+CURRENCY=LTC SERVER=wss://s.altnet.rippletest.net:51233 ./scripts/fund.sh
+ripple-tools set-domain --address=xxx --secret=xxx --sequence=2 --offline=false --fee=0.01 "LTC-GH-HOT"
+ripple-tools set-fee --address=xxx --secret=xxx --sequence=5 --offline=false 1.002
+ripple-tools set-domain --address=xxx --secret=xxx --sequence=2 --offline=false --fee=0.01 "LTC-GH-COLD"
+```

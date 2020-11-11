@@ -2,22 +2,26 @@
   "name": "ripple-tools",
   "version": "0.1.1",
   "description": "GateHub ripple tools",
-  "main": "lib/cmd.js",
-  "bin": "bin/ripple-tools",
-  "author": "GateHub <jaka@gatehub.net> (https://www.gatehub.net)",
-  "license": "MIT",
+  "main": "dist/index",
+  "private": true,
+  "author": "GateHub",
   "scripts": {
-    "release": "np"
+    "car": "rm -fr lib && npm run compile && npm run start",
+    "start": "bin/ripple-tools",
+    "compile": "tsc"
   },
   "dependencies": {
-    "bluebird": "^3.4.1",
-    "lodash": "^4.14.1",
-    "readline-promise": "0.0.1",
-    "ripple-lib": "0.22.0",
-    "yamljs": "^0.2.8",
-    "yargs": "^4.8.1"
+    "decimal.js": "^5.0.8",
+    "reflect-metadata": "^0.1.10",
+    "ripple-lib": "^1.1.2",
+    "typescript": "^2.7.2",
+    "yamljs": "^0.3.0",
+    "yargs": "^13.2.4"
   },
   "devDependencies": {
-    "np": "^2.16.0"
+    "@types/yamljs": "^0.2.30"
+  },
+  "bin": {
+    "ripple-tools": "./bin/ripple-tools"
   }
 }
